@@ -1,0 +1,526 @@
+'.source.gsql':
+  'load table':
+    'prefix': 'LOAD'
+    'body': 'LOAD ${1:filename}'
+  'flatten':
+    'prefix': 'FLATTEN'
+    'body': 'FLATTEN(${1:var})'
+  'matches':
+    'prefix': 'MATCHES'
+    'body': "MATCHES '${1:pattern}'"
+  'average':
+    'prefix': 'AVG'
+    'body': 'AVG(${1:expr})'
+  'concat':
+    'prefix': 'CONCAT'
+    'body': 'CONCAT(${1:expr}, ${2:expr})'
+  'count':
+    'prefix': 'COUNT'
+    'body': 'COUNT(${1:expr})'
+  'count_star':
+    'prefix': 'COUNT_STAR'
+    'body': 'COUNT_STAR(${1:expr})'
+  'diff':
+    'prefix': 'DIFF'
+    'body': 'DIFF(${1:var}, ${2:expr})'
+  'IsEmpty':
+    'prefix': 'IsEmpty'
+    'body': 'IsEmpty(${1:expr})'
+  'max':
+    'prefix': 'MAX'
+    'body': 'MAX(${1:expr})'
+  'min':
+    'prefix': 'MIN'
+    'body': 'MIN(${1:expr})'
+  'size':
+    'prefix': 'SIZE'
+    'body': 'SIZE(${1:expr})'
+  'sum':
+    'prefix': 'SUM'
+    'body': 'SUM(${1:expr})'
+  'tokenize':
+    'prefix': 'TOKENIZE'
+    'body': 'TOKENIZE(${1:expr})'
+  'tokenize w/ delim':
+    'prefix': 'TOKENIZE'
+    'body': "TOKENIZE(${1:expr}, '${2:field_delimiter}')"
+  'abs':
+    'prefix': 'ABS'
+    'body': 'ABS(${1:expr})'
+  'acos':
+    'prefix': 'ACOS'
+    'body': 'ACOS(${1:expr})'
+  'asin':
+    'prefix': 'ASIN'
+    'body': 'ASIN(${1:expr})'
+  'atan':
+    'prefix': 'ATAN'
+    'body': 'ATAN(${1:expr})'
+  'cbrt':
+    'prefix': 'CBRT'
+    'body': 'CBRT(${1:expr})'
+  'ceil':
+    'prefix': 'CEIL'
+    'body': 'CEIL(${1:expr})'
+  'cos':
+    'prefix': 'COS'
+    'body': 'COS(${1:expr})'
+  'cosh':
+    'prefix': 'COSH'
+    'body': 'COSH(${1:expr})'
+  'emm':
+    'prefix': 'EMM'
+    'body': 'Hola Elena :)'
+  'exp':
+    'prefix': 'EXP'
+    'body': 'EXP(${1:expr})'
+  'floor':
+    'prefix': 'FLOOR'
+    'body': 'FLOOR(${1:expr})'
+  'log':
+    'prefix': 'LOG'
+    'body': 'LOG(${1:expr})'
+  'log10':
+    'prefix': 'LOG10'
+    'body': 'LOG10(${1:expr})'
+  'random':
+    'prefix': 'RANDOM'
+    'body': 'RANDOM(${1:expr})'
+  'round':
+    'prefix': 'ROUND'
+    'body': 'ROUND(${1:expr})'
+  'sin':
+    'prefix': 'SIN'
+    'body': 'SIN(${1:expr})'
+  'sinh':
+    'prefix': 'SINH'
+    'body': 'SINH(${1:expr})'
+  'sqrt':
+    'prefix': 'SQRT'
+    'body': 'SQRT(${1:expr})'
+  'tan':
+    'prefix': 'TAN'
+    'body': 'TAN(${1:expr})'
+  'tanh':
+    'prefix': 'TANH'
+    'body': 'TANH(${1:expr})'
+  'indexof':
+    'prefix': 'INDEXOF'
+    'body': "INDEXOF(${1:string}, '${2:character}, ${3:startIndex})"
+  'last_index_of':
+    'prefix': 'LAST_INDEX_OF'
+    'body': "LAST_INDEX_OF(${1:string}, '${2:character}', ${3:startIndex})"
+  'lower':
+    'prefix': 'LOWER'
+    'body': 'LOWER(${1:string})'
+  'regex_extract':
+    'prefix': 'REGEX_EXTRACT'
+    'body': "REGEX_EXTRACT(${1:string}, '${2:expression}', ${3:index})"
+  'regex_extract_all':
+    'prefix': 'REGEX_EXTRACT_ALL '
+    'body': "REGEX_EXTRACT_ALL(${1:string}, '${2:expression}')"
+  'replace':
+    'prefix': 'REPLACE'
+    'body': "REPLACE(${1:string}, '${2:oldChar}', '${3:newChar}')"
+  'strsplit':
+    'prefix': 'STRSPLIT'
+    'body': "STRSPLIT(${1:string}, '${2:expression}', ${3:limit})'"
+  'substring':
+    'prefix': 'SUBSTRING'
+    'body': "SUBSTRING(${1:string}, ${2:startIndex}, ${3:stopIndex})"
+  'trim':
+    'prefix': 'TRIM'
+    'body': 'TRIM(${1:string})'
+  'upper':
+    'prefix': 'UPPER'
+    'body': 'UPPER(${1:string})'
+  "LTRIM":
+    'prefix': "LTRIM"
+    "body" : "LTRIM(${1:string})"
+  "RTRIM":
+    'prefix': "RTRIM"
+    "body" : "RTRIM(${1:string})"
+  "int":
+    'prefix': "int"
+  "long":
+    'prefix': "long"
+  "float":
+    'prefix': "float"
+  "double":
+    'prefix': "double"
+  "chararray":
+    'prefix': "chararray"
+  "bytearray":
+    'prefix': "bytearray"
+  "boolean":
+    'prefix': "boolean"
+  "datetime":
+    'prefix': "datetime"
+  "tuple":
+    'prefix': "tuple"
+  "bag":
+    'prefix': "bag"
+  "map":
+    'prefix': "map"
+  "ALL ":
+    'prefix': "ALL "
+  "AS ":
+    'prefix': "AS "
+  "ASSERT ":
+    'prefix': "ASSERT "
+  "BY ":
+    'prefix': "BY "
+  "CROSS ":
+    'prefix': "CROSS "
+  "DEFINE ":
+    'prefix': "DEFINE "
+  "DISTINCT ":
+    'prefix': "DISTINCT "
+  "FILTER ":
+    'prefix': "FILTER "
+  "FOREACH ":
+    'prefix': "FOREACH "
+  "GROUP ":
+    'prefix': "GROUP "
+  "IMPORT ":
+    'prefix': "IMPORT "
+  "INTO ":
+    'prefix': "INTO "
+  "JOIN ":
+    'prefix': "JOIN "
+  "LIMIT ":
+    'prefix': "LIMIT "
+  "LOAD ":
+    'prefix': "LOAD "
+  "MAPREDUCE ":
+    'prefix': "MAPREDUCE "
+  "ORDER":
+    'prefix': "ORDER BY "
+  "SAMPLE ":
+    'prefix': "SAMPLE "
+  "SPLIT ":
+    'prefix': "SPLIT "
+  "STORE ":
+    'prefix': "STORE "
+  "STREAM ":
+    'prefix': "STREAM "
+  "THROUGH ":
+    'prefix': "THROUGH "
+  "UNION ":
+    'prefix': "UNION "
+  "RETURNS ":
+    'prefix': "RETURNS "
+  "RANK ":
+    'prefix': "RANK "
+  "CUBE ":
+    'prefix': "CUBE "
+  "ROLLUP ":
+    'prefix': "ROLLUP "
+  "DESC ":
+    'prefix': "DESC "
+  "DUMP ":
+    'prefix': "DUMP "
+  "DESCRIBE ":
+    'prefix': "DESCRIBE "
+  "EXPLAIN ":
+    'prefix': "EXPLAIN "
+  "GENERATE ":
+    'prefix': "GENERATE "
+  "ILLUSTRATE ":
+    'prefix': "ILLUSTRATE "
+  "USING ":
+    'prefix': "USING "
+  # # "abs":
+  # #   'prefix': "abs"
+  # # "acos":
+  # #   'prefix': "acos"
+  # "add_days":
+  #   'prefix': "add_days"
+  # "add_months":
+  #   'prefix': "add_months"
+  # "and": 'prefix': "and"
+  # "append_array": 'prefix': "append_array"
+  # "array": 'prefix': "array"
+  # "array_contains": 'prefix': "array_contains"
+  # "array_freq_count": 'prefix': "array_freq_count"
+  # "array_index": 'prefix': "array_index"
+  # "ascii": 'prefix': "ascii"
+  # "asin": 'prefix': "asin"
+  # "assert_equals": 'prefix': "assert_equals"
+  # "assert_less_than": 'prefix': "assert_less_than"
+  # "assert_true": 'prefix': "assert_true"
+  # "atan": 'prefix': "atan"
+  # "avg": 'prefix': "avg"
+  # "base64": 'prefix': "base64"
+  # "between": 'prefix': "between"
+  # "bin": 'prefix': "bin"
+  # "bloom": 'prefix': "bloom"
+  # "bloom_and": 'prefix': "bloom_and"
+  # "bloom_contains": 'prefix': "bloom_contains"
+  # "bloom_not": 'prefix': "bloom_not"
+  # "bloom_or": 'prefix': "bloom_or"
+  # "booking_week": 'prefix': "booking_week"
+  # "case": 'prefix': "case"
+  # "cast_array": 'prefix': "cast_array"
+  # "cast_map": 'prefix': "cast_map"
+  # "ceil": 'prefix': "ceil"
+  # "ceiling": 'prefix': "ceiling"
+  # "coalesce": 'prefix': "coalesce"
+  # "collect": 'prefix': "collect"
+  # "collect_freq_count": 'prefix': "collect_freq_count"
+  # "collect_list": 'prefix': "collect_list"
+  # "collect_max": 'prefix': "collect_max"
+  # "collect_merge_max": 'prefix': "collect_merge_max"
+  # "collect_set": 'prefix': "collect_set"
+  # "combine": 'prefix': "combine"
+  # "combine_hyperloglog": 'prefix': "combine_hyperloglog"
+  # "combine_previous_sketch": 'prefix': "combine_previous_sketch"
+  # "combine_sketch": 'prefix': "combine_sketch"
+  # "combine_unique": 'prefix': "combine_unique"
+  # "compute_stats": 'prefix': "compute_stats"
+  # "concat": 'prefix': "concat"
+  # "concat_ws": 'prefix': "concat_ws"
+  # "conditional_emit": 'prefix': "conditional_emit"
+  # "context_ngrams": 'prefix': "context_ngrams"
+  # "conv": 'prefix': "conv"
+  # "convert_to_sketch": 'prefix': "convert_to_sketch"
+  # "corr": 'prefix': "corr"
+  # "cos": 'prefix': "cos"
+  # "count": 'prefix': "count"
+  # "covar_pop": 'prefix': "covar_pop"
+  # "covar_samp": 'prefix': "covar_samp"
+  # "create_union": 'prefix': "create_union"
+  # "cume_dist": 'prefix': "cume_dist"
+  # "current_database": 'prefix': "current_database"
+  # "current_date": 'prefix': "current_date"
+  # "current_timestamp": 'prefix': "current_timestamp"
+  # "current_user": 'prefix': "current_user"
+  # "date_add": 'prefix': "date_add"
+  # "date_range": 'prefix': "date_range"
+  # "date_sub": 'prefix': "date_sub"
+  # "date_to_start_quarter": 'prefix': "date_to_start_quarter"
+  # "date_to_start_week": 'prefix': "date_to_start_week"
+  # "datediff": 'prefix': "datediff"
+  # "day": 'prefix': "day"
+  # "dayofmonth": 'prefix': "dayofmonth"
+  # "decode": 'prefix': "decode"
+  # "degrees": 'prefix': "degrees"
+  # "dense_rank": 'prefix': "dense_rank"
+  # "distributed_bloom": 'prefix': "distributed_bloom"
+  # "distributed_map": 'prefix': "distributed_map"
+  # "div": 'prefix': "div"
+  # "e": 'prefix': "e"
+  # "elt": 'prefix': "elt"
+  # "encode": 'prefix': "encode"
+  # "estimated_reach": 'prefix': "estimated_reach"
+  # "event_parser": 'prefix': "event_parser"
+  # "ewah_bitmap": 'prefix': "ewah_bitmap"
+  # "ewah_bitmap_and": 'prefix': "ewah_bitmap_and"
+  # "ewah_bitmap_empty": 'prefix': "ewah_bitmap_empty"
+  # "ewah_bitmap_or": 'prefix': "ewah_bitmap_or"
+  # "exp": 'prefix': "exp"
+  # "experiments": 'prefix': "experiments"
+  # "explode": 'prefix': "explode"
+  # "field": 'prefix': "field"
+  # "find_in_set": 'prefix': "find_in_set"
+  # "first_index": 'prefix': "first_index"
+  # "first_value": 'prefix': "first_value"
+  # "flatten_array": 'prefix': "flatten_array"
+  # "floor": 'prefix': "floor"
+  # "format_number": 'prefix': "format_number"
+  # "from_camel_case": 'prefix': "from_camel_case"
+  # "from_json": 'prefix': "from_json"
+  # "from_unixtime": 'prefix': "from_unixtime"
+  # "from_utc_timestamp": 'prefix': "from_utc_timestamp"
+  # "get_json_object": 'prefix': "get_json_object"
+  # "geturl": 'prefix': "geturl"
+  # "greatest": 'prefix': "greatest"
+  # "group_concat": 'prefix': "group_concat"
+  # "group_count": 'prefix': "group_count"
+  # "grouped_rank": 'prefix': "grouped_rank"
+  # "hash": 'prefix': "hash"
+  # "hash_md5": 'prefix': "hash_md5"
+  # "hbase_balanced_key": 'prefix': "hbase_balanced_key"
+  # "hbase_batch_get": 'prefix': "hbase_batch_get"
+  # "hbase_batch_put": 'prefix': "hbase_batch_put"
+  # "hbase_cached_get": 'prefix': "hbase_cached_get"
+  # "hbase_get": 'prefix': "hbase_get"
+  # "hbase_put": 'prefix': "hbase_put"
+  # "hex": 'prefix': "hex"
+  # "histogram_numeric": 'prefix': "histogram_numeric"
+  # "hll_est_cardinality": 'prefix': "hll_est_cardinality"
+  # "hour": 'prefix': "hour"
+  # "hyperloglog": 'prefix': "hyperloglog"
+  # "if": 'prefix': "if"
+  # "in": 'prefix': "in"
+  # "in_file": 'prefix': "in_file"
+  # "index": 'prefix': "index"
+  # "inet_aton": 'prefix': "inet_aton"
+  # "inet_ntoa": 'prefix': "inet_ntoa"
+  # "initcap": 'prefix': "initcap"
+  # "inline": 'prefix': "inline"
+  # "instr": 'prefix': "instr"
+  # "intersect_array": 'prefix': "intersect_array"
+  # "ip2country": 'prefix': "ip2country"
+  # "ip2latlon": 'prefix': "ip2latlon"
+  # "ip2timezone": 'prefix': "ip2timezone"
+  # "ipcountry": 'prefix': "ipcountry"
+  # "isnotnull": 'prefix': "isnotnull"
+  # "isnull": 'prefix': "isnull"
+  # "java_method": 'prefix': "java_method"
+  # "join_array": 'prefix': "join_array"
+  # "json_map": 'prefix': "json_map"
+  # "json_split": 'prefix': "json_split"
+  # "json_tuple": 'prefix': "json_tuple"
+  # "label": 'prefix': "label"
+  # "lag": 'prefix': "lag"
+  # "last_day": 'prefix': "last_day"
+  # "last_index": 'prefix': "last_index"
+  # "last_value": 'prefix': "last_value"
+  # "lcase": 'prefix': "lcase"
+  # "lead": 'prefix': "lead"
+  # "least": 'prefix': "least"
+  # "length": 'prefix': "length"
+  # "like": 'prefix': "like"
+  # "ln": 'prefix': "ln"
+  # "locate": 'prefix': "locate"
+  # "log": 'prefix': "log"
+  # "log10": 'prefix': "log10"
+  # "log2": 'prefix': "log2"
+  # "lower": 'prefix': "lower"
+  # "lpad": 'prefix': "lpad"
+  # "ltrim": 'prefix': "ltrim"
+  # "map": 'prefix': "map"
+  # "map_filter_keys": 'prefix': "map_filter_keys"
+  # "map_index": 'prefix': "map_index"
+  # "map_key_values": 'prefix': "map_key_values"
+  # "map_keys": 'prefix': "map_keys"
+  # "map_mode": 'prefix': "map_mode"
+  # "map_values": 'prefix': "map_values"
+  # "matchpath": 'prefix': "matchpath"
+  # "max": 'prefix': "max"
+  # "md5": 'prefix': "md5"
+  # "min": 'prefix': "min"
+  # "minute": 'prefix': "minute"
+  # "month": 'prefix': "month"
+  # "moving_avg": 'prefix': "moving_avg"
+  # "multiday_count": 'prefix': "multiday_count"
+  # "named_struct": 'prefix': "named_struct"
+  # "negative": 'prefix': "negative"
+  # "next_day": 'prefix': "next_day"
+  # "ngrams": 'prefix': "ngrams"
+  # "noop": 'prefix': "noop"
+  # "noopstreaming": 'prefix': "noopstreaming"
+  # "noopwithmap": 'prefix': "noopwithmap"
+  # "noopwithmapstreaming": 'prefix': "noopwithmapstreaming"
+  # "not": 'prefix': "not"
+  # "now": 'prefix': "now"
+  # "ntile": 'prefix': "ntile"
+  # "numeric_range": 'prefix': "numeric_range"
+  # "nvl": 'prefix': "nvl"
+  # "or": 'prefix': "or"
+  # "parse_url": 'prefix': "parse_url"
+  # "parse_url_tuple": 'prefix': "parse_url_tuple"
+  # "percent_rank": 'prefix': "percent_rank"
+  # "percentile": 'prefix': "percentile"
+  # "percentile_approx": 'prefix': "percentile_approx"
+  # "pi": 'prefix': "pi"
+  # "pmod": 'prefix': "pmod"
+  # "posexplode": 'prefix': "posexplode"
+  # "positive": 'prefix': "positive"
+  # "pow": 'prefix': "pow"
+  # "power": 'prefix': "power"
+  # "printf": 'prefix': "printf"
+  # "quarter": 'prefix': "quarter"
+  # "radians": 'prefix': "radians"
+  # "rand": 'prefix': "rand"
+  # "rank": 'prefix': "rank"
+  # "ranked_long_diff": 'prefix': "ranked_long_diff"
+  # "ranked_long_sum": 'prefix': "ranked_long_sum"
+  # "reflect": 'prefix': "reflect"
+  # "reflect2": 'prefix': "reflect2"
+  # "regexp": 'prefix': "regexp"
+  # "regexp_extract": 'prefix': "regexp_extract"
+  # "regexp_replace": 'prefix': "regexp_replace"
+  # "repeat": 'prefix': "repeat"
+  # "reverse": 'prefix': "reverse"
+  # "rlike": 'prefix': "rlike"
+  # "round": 'prefix': "round"
+  # "row_number": 'prefix': "row_number"
+  # "row_sequence": 'prefix': "row_sequence"
+  # "rpad": 'prefix': "rpad"
+  # "rtrim": 'prefix': "rtrim"
+  # "running_count": 'prefix': "running_count"
+  # "running_sum": 'prefix': "running_sum"
+  # "salted_bigint": 'prefix': "salted_bigint"
+  # "salted_bigint_key": 'prefix': "salted_bigint_key"
+  # "second": 'prefix': "second"
+  # "sentences": 'prefix': "sentences"
+  # "set_difference": 'prefix': "set_difference"
+  # "set_similarity": 'prefix': "set_similarity"
+  # "sha1": 'prefix': "sha1"
+  # "sha2": 'prefix': "sha2"
+  # "sign": 'prefix': "sign"
+  # "sin": 'prefix': "sin"
+  # "size": 'prefix': "size"
+  # "sketch_hashes": 'prefix': "sketch_hashes"
+  # "sketch_set": 'prefix': "sketch_set"
+  # "sort_array": 'prefix': "sort_array"
+  # "space": 'prefix': "space"
+  # "split": 'prefix': "split"
+  # "sqrt": 'prefix': "sqrt"
+  # "stack": 'prefix': "stack"
+  # "std": 'prefix': "std"
+  # "stddev": 'prefix': "stddev"
+  # "stddev_pop": 'prefix': "stddev_pop"
+  # "stddev_samp": 'prefix': "stddev_samp"
+  # "str_to_map": 'prefix': "str_to_map"
+  # "struct": 'prefix': "struct"
+  # "substr": 'prefix': "substr"
+  # "substring": 'prefix': "substring"
+  # "sum": 'prefix': "sum"
+  # "sum_array": 'prefix': "sum_array"
+  # "tan": 'prefix': "tan"
+  # "throw_error": 'prefix': "throw_error"
+  # "to_camel_case": 'prefix': "to_camel_case"
+  # "to_date": 'prefix': "to_date"
+  # "to_json": 'prefix': "to_json"
+  # "to_unix_timestamp": 'prefix': "to_unix_timestamp"
+  # "to_utc_timestamp": 'prefix': "to_utc_timestamp"
+  # "translate": 'prefix': "translate"
+  # "trim": 'prefix': "trim"
+  # "truncate_array": 'prefix': "truncate_array"
+  # "ucase": 'prefix': "ucase"
+  # "unbase64": 'prefix': "unbase64"
+  # "unhex": 'prefix': "unhex"
+  # "union_hyperloglog": 'prefix': "union_hyperloglog"
+  # "union_map": 'prefix': "union_map"
+  # "union_max": 'prefix': "union_max"
+  # "union_sketch": 'prefix': "union_sketch"
+  # "union_vector_sum": 'prefix': "union_vector_sum"
+  # "unix_timestamp": 'prefix': "unix_timestamp"
+  # "upper": 'prefix': "upper"
+  # "var_pop": 'prefix': "var_pop"
+  # "var_samp": 'prefix': "var_samp"
+  # "variance": 'prefix': "variance"
+  # "vector_add": 'prefix': "vector_add"
+  # "vector_cross_product": 'prefix': "vector_cross_product"
+  # "vector_dot_product": 'prefix': "vector_dot_product"
+  # "vector_magnitude": 'prefix': "vector_magnitude"
+  # "vector_scalar_mult": 'prefix': "vector_scalar_mult"
+  # "visitor_deprecated": 'prefix': "visitor_deprecated"
+  # "weekofyear": 'prefix': "weekofyear"
+  # "when": 'prefix': "when"
+  # "windowingtablefunction": 'prefix': "windowingtablefunction"
+  # "write_to_graphite": 'prefix': "write_to_graphite"
+  # "write_to_tsdb": 'prefix': "write_to_tsdb"
+  # "xpath": 'prefix': "xpath"
+  # "xpath_boolean": 'prefix': "xpath_boolean"
+  # "xpath_double": 'prefix': "xpath_double"
+  # "xpath_float": 'prefix': "xpath_float"
+  # "xpath_int": 'prefix': "xpath_int"
+  # "xpath_long": 'prefix': "xpath_long"
+  # "xpath_number": 'prefix': "xpath_number"
+  # "xpath_short": 'prefix': "xpath_short"
+  # "xpath_string": 'prefix': "xpath_string"
+  # "year": 'prefix': "year"

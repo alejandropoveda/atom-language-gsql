@@ -1,0 +1,6 @@
+'.source.gsql':
+  'editor':
+    'commentStart': '# '
+    'foldEndPattern': '^\\s*\\)'
+    'increaseIndentPattern': '^\\s*(create|query|for\\s+graph|clear|export|vertex|edge|job|loading|online_post)\\b|\\((?!.*\\))'
+    'decreaseIndentPattern': '^\\s*\\)(?!=.*\\()'

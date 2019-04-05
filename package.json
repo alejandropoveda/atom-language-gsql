@@ -1,0 +1,15 @@
+{
+  "name": "language-gsql",
+  "main": "./lib/language-gsql",
+  "version": "0.1.0",
+  "description": "GSQL language support in Atom",
+  "keywords": [
+  ],
+  "repository": "https://github.com/alejandropoveda/language-gsql",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
