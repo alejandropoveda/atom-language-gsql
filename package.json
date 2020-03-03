@@ -1,7 +1,7 @@
 {
   "name": "language-gsql",
   "main": "./lib/language-gsql",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "GSQL language support in Atom",
   "keywords": [
     "gsql",
@@ -13,6 +13,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
