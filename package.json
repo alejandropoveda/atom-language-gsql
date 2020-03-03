@@ -1,9 +1,12 @@
 {
   "name": "language-gsql",
   "main": "./lib/language-gsql",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "GSQL language support in Atom",
   "keywords": [
+    "gsql",
+    "tigergraph-gsql",
+    "tigergraph"
   ],
   "repository": "https://github.com/alejandropoveda/language-gsql",
   "license": "MIT",
