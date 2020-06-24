@@ -152,7 +152,7 @@
   }
   #Types
   {
-    'match': '\\*'
+    'match': '(?!/\\*|\\*/)\\*'
     'name': 'keyword.operator.star.gsql'
   }
   {
@@ -257,6 +257,17 @@
             'name': 'comment.line.double-slash.gsql'
           }
         ]
+      }
+      {
+        'begin': '/\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.gsql'
+        'end': '\\*/'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.gsql'
+        'name': 'comment.block.gsql'
       }
     ]
   'regexps':
